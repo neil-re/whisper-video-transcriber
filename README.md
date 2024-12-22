@@ -1,23 +1,27 @@
 # Whisper Video Transcriber
 
-Script en Python que extrae audio de un archivo de video con FFmpeg, lo transcribe usando el modelo Whisper de OpenAI y genera tanto un archivo de texto como un archivo de subtítulos `.srt`.
+A Python script that:
+1. Reads the path of a video file from `path_video.txt`.
+2. Converts the video to an audio file (`.mp3`) using FFmpeg.
+3. Uses [OpenAI Whisper](https://github.com/openai/whisper) to:
+   - Transcribe the audio into a `.txt` file.
+   - Generate `.srt` subtitles with timestamps.
 
-## Características
-- Convierte automáticamente videos a archivos de audio `.mp3`.
-- Utiliza el modelo `base` de Whisper para transcribir audio a texto.
-- Genera subtítulos en formato `.srt` con marcas de tiempo.
-- Lee la ruta del video desde un archivo de texto (`ruta_video.txt`) para evitar modificar el script.
+## Features
 
-## Tecnologías / Dependencias
-- Python 3.7+
-- [PyTorch](https://pytorch.org/) 
-- [Whisper de OpenAI](https://github.com/openai/whisper) 
-- [FFmpeg](https://ffmpeg.org/)
-- `ffmpeg-python`
+- Automatic audio extraction from video (`.mp4`, `.mov`, etc.).
+- Option to remove the generated audio file after processing.
+- Simple text-based configuration via `path_video.txt`.
 
-## Uso rápido
-1. Clona el repositorio.
-2. Crea y activa un entorno virtual (opcional).
-3. `pip install -r requirements.txt`
-4. Coloca la ruta de tu video en `ruta_video.txt`.
-5. Ejecuta `python main.py` para generar la transcripción y subtítulos.
+## Requirements
+
+- Python 3.7 or above  
+- [PyTorch](https://pytorch.org)  
+- [OpenAI Whisper](https://github.com/openai/whisper)  
+- [FFmpeg](https://ffmpeg.org) installed on your system  
+- `ffmpeg-python`  
+
+You can install dependencies using:
+
+```bash
+pip install -r requirements.txt
